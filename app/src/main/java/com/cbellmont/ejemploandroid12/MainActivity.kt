@@ -22,12 +22,11 @@ class MainActivity : AppCompatActivity(), Clickable {
 
         val list = MutableList(100) { pos -> "Elemento $pos"}
         createRecyclerView(list)
+
         buttonRandom.setOnClickListener { adapter.updateData(list.apply { shuffle() }) }
     }
 
     private fun createRecyclerView(values: List<String>) {
-
-
         adapter = StringAdapter(values, this)
 
         recyclerView.layoutManager = LinearLayoutManager(this)

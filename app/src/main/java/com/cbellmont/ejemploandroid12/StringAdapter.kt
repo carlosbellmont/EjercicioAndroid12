@@ -24,8 +24,8 @@ class StringAdapter(var stringList : List<String>, var listener : Clickable) : R
     override fun onBindViewHolder(holder: StringViewHolder, position: Int) {
         holder.textView.text = stringList[position]
         holder.root.setOnClickListener {
-            Toast.makeText(holder.textView.context, "Has pulsado el elemento $position", Toast.LENGTH_LONG).show()
-            listener.itemClicked("Has pulsado el elemento $position")
+            Toast.makeText(holder.textView.context, "Has pulsado el ${stringList[position]}", Toast.LENGTH_LONG).show()
+            listener.itemClicked("Has pulsado el elemento ${stringList[position]}")
         }
     }
 

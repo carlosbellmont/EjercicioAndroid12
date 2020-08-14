@@ -27,7 +27,11 @@ class StringAdapter(var stringList : List<String>, var listener : Clickable) : R
             Toast.makeText(holder.textView.context, "Has pulsado el elemento $position", Toast.LENGTH_LONG).show()
             listener.itemClicked("Has pulsado el elemento $position")
         }
+    }
 
+    fun updateData(newData : List<String>){
+        stringList = newData
+        notifyDataSetChanged()
     }
 }
 
